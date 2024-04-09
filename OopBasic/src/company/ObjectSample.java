@@ -38,9 +38,21 @@ public class ObjectSample {
         var devDepartment = new Department("開発部", "yy", 0);
         var engineer = new Engineer("田中", devDepartment, "一般社員", 88,"Java");
         
+        
         engineer.report();
         engineer.joinMeeting();
-        engineer.developSpftware();
+        engineer.developSoftware();
+        
+        Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
+        
+        projectManager.report();
+        projectManager.joinMeeting();
+        if (projectManager instanceof Engineer) {
+            ((Engineer)projectManager).developSoftware();
+            
+        }
+    }
+    
         
 
    /*Lesson3 Chapter6.4 [オブジェクト]
@@ -146,4 +158,4 @@ public class ObjectSample {
     } catch (IOException e) {
         e.printStackTrace(); */
     }
-}
+

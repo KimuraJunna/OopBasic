@@ -51,6 +51,16 @@ public class ObjectSample {
             ((Engineer)projectManager).developSoftware();
             
         }
+        
+        System.out.println("");
+        
+        var parttimeWorker = new ParttimeWorker("太田", department);
+        
+        ((Workable)employee).work();
+        ((Workable)engineer).work();
+        ((Workable)projectManager).work();
+        ((Workable)parttimeWorker).work();
+        
     }
     
         

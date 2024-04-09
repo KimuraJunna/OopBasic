@@ -26,12 +26,12 @@ public class ObjectSample {
 
     public static void main(String[] args) {
         
-        var department = new Department("営業部", "xx", 1000000);
-        var employee = new Employee("鈴木", department, "課長", 100);
+        var salesDepartment = new Department("営業部", "xx", 1000000);
+        Employee sales = new Sales("鈴木", salesDepartment, "課長", 100);
         
-        employee.report();
-        employee.report(2);
-        employee.joinMeeting();
+        sales.report();
+        sales.report(2);
+        sales.joinMeeting(); 
         
         System.out.println("");
         
@@ -42,6 +42,8 @@ public class ObjectSample {
         engineer.report();
         engineer.joinMeeting();
         engineer.developSoftware();
+        
+        System.out.println("");
         
         Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
         
@@ -54,9 +56,9 @@ public class ObjectSample {
         
         System.out.println("");
         
-        var parttimeWorker = new ParttimeWorker("太田", department);
+        var parttimeWorker = new ParttimeWorker("太田", salesDepartment);
         
-        ((Workable)employee).work();
+        ((Workable)sales).work();
         ((Workable)engineer).work();
         ((Workable)projectManager).work();
         ((Workable)parttimeWorker).work();

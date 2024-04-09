@@ -1,6 +1,11 @@
 package company;
 
+import java.io.IOException;
 import java.lang.invoke.VarHandle;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.security.KeyStore.TrustedCertificateEntry;
 import java.time.DateTimeException;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -12,6 +17,7 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import javax.sql.rowset.spi.SyncResolver;
 
@@ -114,5 +120,27 @@ public class ObjectSample {
     
     System.out.println("Tokyo Time: " + tokyoTime);
     System.out.println("UTC Time: " + utcTime);
+    }
+    
+  //Lesson3 Chapter6.4 [テキストファイル]
+    
+    String content = "これは最初の行です。\nこれは次の行です。\nそして、これが最後の行です。";
+    
+    
+    try {
+        
+        Files.writeString(Paths.get("example.txt"),content);
+        
+        String content2 = Files.readString(Paths.get("example.txt"));
+        System.out.println(content2);
+        
+        List<String> lines = Files.readAllLines(Paths.get("example.txt"));
+        var lineNumber = 1;
+        for (String line : lines) {
+            System.out.println("%d行目：％s".formatted(lineNumber,line));
+            lineNumber++;
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
     }
 }

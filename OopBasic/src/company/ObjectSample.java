@@ -1,5 +1,5 @@
 package company;
-
+/*
 import java.io.IOException;
 import java.lang.invoke.VarHandle;
 import java.nio.file.Files;
@@ -20,6 +20,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.sql.rowset.spi.SyncResolver;
+*/
 
 public class ObjectSample {
 
@@ -35,12 +36,14 @@ public class ObjectSample {
         System.out.println("");
         
         var devDepartment = new Department("開発部", "yy", 0);
-        var engineer = new Employee("田中", devDepartment, "一般社員", 88);
+        var engineer = new Engineer("田中", devDepartment, "一般社員", 88,"Java");
         
         engineer.report();
         engineer.joinMeeting();
+        engineer.developSpftware();
+        
 
-   //Lesson3 Chapter6.4 [オブジェクト]
+   /*Lesson3 Chapter6.4 [オブジェクト]
         
     String a = new String("Hello");
     String b = new String("Hello");
@@ -141,6 +144,6 @@ public class ObjectSample {
             lineNumber++;
         }
     } catch (IOException e) {
-        e.printStackTrace();
+        e.printStackTrace(); */
     }
 }
